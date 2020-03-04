@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remowe word</title>
+</head>
+<body>
+    <h2>Смотреть до конца</h2>
+    <div class="text">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos dolore labore repellendus quaerat inventore eaque vel blanditiis delectus ratione fuga, vero excepturi temporibus ex quidem corrupti, rem praesentium minus consequuntur illo perferendis cupiditate aspernatur earum assumenda. Voluptas ipsam incidunt inventore iusto laboriosam itaque veritatis quas quibusdam totam repudiandae! Molestias modi saepe officia mollitia quam ipsum quisquam? Modi in dolorum soluta praesentium fuga nesciunt, ipsa doloribus, culpa veniam commodi numquam distinctio blanditiis neque reprehenderit nemo? Modi ab eius adipisci numquam nostrum vitae praesentium, debitis tempore voluptatem veniam exercitationem aliquam accusamus ullam, iste placeat in eaque officia explicabo recusandae reprehenderit ipsum dolore, corrupti culpa doloribus! Sit autem nulla consectetur quam repellendus adipisci quisquam dolorem impedit in, quaerat cum quod reiciendis quo odit unde ullam minus nam perspiciatis ut. Illum itaque reprehenderit dolor facilis impedit aperiam cupiditate magni aliquid perspiciatis velit. Nesciunt earum blanditiis aperiam. Laboriosam nesciunt magni doloribus ducimus! Assumenda perferendis obcaecati ipsam recusandae amet ullam animi dignissimos unde culpa asperiores error provident totam eos voluptatem voluptate, nihil consequatur omnis velit commodi debitis praesentium quos nostrum! Adipisci quos suscipit doloribus soluta voluptatum maiores eum corporis. Culpa architecto officiis cumque asperiores neque atque suscipit unde rem, necessitatibus iure voluptatem quis quidem commodi consectetur accusamus, explicabo repudiandae sint distinctio voluptate. Ut consectetur nulla velit labore odit doloribus totam soluta, facilis earum facere, expedita ex quam tempore, eveniet perspiciatis sequi laborum impedit aperiam commodi. Consectetur repellendus exercitationem obcaecati eligendi, reiciendis, facere veritatis blanditiis quia, excepturi sint hic libero temporibus quod dolorum atque error. Odio beatae odit ullam ut aliquid cupiditate eius aliquam nihil ab, illo ex qui reprehenderit sed architecto hic laboriosam asperiores corporis quo natus quos in accusamus non! Eius sapiente veniam doloribus harum? Corrupti nisi, libero assumenda error tenetur impedit dicta quo dolorem quasi sequi quidem labore cum consequuntur velit ipsam provident id, eos quibusdam accusamus architecto explicabo cupiditate magnam. Autem quia odit voluptatem at, delectus quis, corporis sit vel quisquam mollitia tempora ut facere exercitationem temporibus aliquid! Perferendis aspernatur quia illo ut corrupti ex dignissimos facere hic quibusdam, voluptate nulla non provident totam quos reiciendis porro aliquid voluptatem eius earum! Ut reiciendis numquam laudantium sequi nam, molestiae ea, quod inventore repellat blanditiis repudiandae officia enim dolores quidem nemo velit quam possimus cumque illum dolorum quasi minus suscipit. Eaque voluptatibus quod ipsam quo dignissimos ad quis qui modi perspiciatis ullam veritatis, quas aliquam sunt dicta iste nemo reiciendis nihil nostrum ea beatae eius doloribus laboriosam maiores? Placeat aut provident voluptates ratione sed hic dicta architecto temporibus possimus odio magnam vitae, nostrum autem doloremque voluptatem et. Asperiores quam soluta id dolore libero quibusdam, iste, culpa at praesentium adipisci aperiam? Maxime nobis maiores dolores officiis voluptas molestiae dicta doloribus cum minus, fugit quisquam repudiandae eos nemo, autem soluta nam, eaque aliquid asperiores cupiditate. Illo alias delectus magni sit quae error, molestiae ea adipisci autem, sed, corrupti quibusdam aliquam quo mollitia incidunt commodi architecto distinctio? Ab quos molestias ipsum nulla et nesciunt id placeat eligendi numquam asperiores, repellendus exercitationem ullam sapiente, esse, soluta illo ex? Cumque?
+    </div>
+    <script>
+
+        function remoweRandomWord() {
+            let text = document.querySelector('.text').innerText;
+                
+            let textArray = text.split(' ');
+                
+            let arrWithOutOneWord = remoweOneRandomEl(textArray);
+
+            let newText = arrWithOutOneWord.join(' ');
+            document.querySelector('.text').innerText = newText;
+
+            return arrWithOutOneWord.length;
+               
+        }
+
+        function remoweOneRandomEl(array) {
+            let randomEl = Math.floor(Math.random() * array.length);
+            array.splice(randomEl, 1);
+            return array;
+        }
+
+        let interval = setInterval(function() {
+            let arrayLength = remoweRandomWord();
+                if (arrayLength == 0) {
+                    document.querySelector('.text').innerText = ':)';
+                    clearInterval(interval)
+                }
+          
+        }, 100);
+            
+
+           
+    </script>
+</body>
+</html>
