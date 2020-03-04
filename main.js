@@ -13,3 +13,4 @@ textArray.forEach((element,index) => {
   tr.appendChild(td);
   table.appendChild(tr);
 });
+
